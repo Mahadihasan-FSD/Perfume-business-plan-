@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Scentoria | Full Perfume Business Plan</title>
+  <!-- Google Fonts & AOS Library -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Serif Bengali', sans-serif;
+      background: linear-gradient(145deg, #fff9f5 0%, #fef3e8 100%);
+      color: #2e241f;
+      overflow-x: hidden;
+    }
+
+    /* Welcome Animation Overlay */
+    .welcome-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #f7e1d0, #e7c6b0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 1.2s ease, visibility 1.2s ease;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .welcome-content {
+      text-align: center;
+      animation: gentlePop 1s ease-out;
+      padding: 2rem;
+    }
+
+    .welcome-content i {
+      font-size: 5rem;
+      color: #b45f2b;
+      margin-bottom: 1rem;
+      animation: float 2s infinite;
+    }
+
+    .welcome-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #4a2a1a;
+      margin-bottom: 0.5rem;
+    }
+
+    .welcome-content p {
+      font-size: 1.5rem;
+      color: #6b3f20;
+    }
+
+    @keyframes gentlePop {
+      0% { transform: scale(0.9); opacity: 0; }
+      80% { transform: scale(1.02); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .main-content {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Section Divider Styling */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 3rem 0 2rem 0;
+      position: relative;
+    }
+    .divider-line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d4a373, #b5835a, #d4a373, transparent);
+    }
+    .divider-icon {
+      background: #fff1e6;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 700;
+      color: #8b5a33;
+      margin: 0 1rem;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 2px dashed #e2c7b3;
+      padding-bottom: 1.5rem;
+    }
+
+    .brand-header h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #a15329, #d49466);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: rgba(255, 253, 250, 0.95);
+      border-radius: 2rem;
+      padding: 1.6rem 1.5rem;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      border: 1px solid #ffe3d0;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px -14px rgba(92, 54, 34, 0.15);
+      border-color: #f7cfb5;
+    }
+
+    .card-icon {
+      font-size: 2.4rem;
+      color: #bd7c51;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge-num {
+      background: #f0ddd0;
+      border-radius: 40px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8b4a23;
+    }
+
+    .card-content {
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: #3f2d22;
+    }
+
+    .card-content p {
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight {
+      background: #fff1e6;
+      padding: 0.2rem 0.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .profit-box, .risk-box, .why-box, .cta-box {
+      background: linear-gradient(120deg, #fff6ef, #ffede1);
+      border-left: 6px solid #c17a4b;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      background: #fff3ea;
+      border-radius: 2rem;
+      padding: 1.8rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .container { padding: 1rem; }
+      .brand-header h2 { font-size: 2rem; }
+      .card-title { font-size: 1.4rem; }
+      .divider-icon { font-size: 0.7rem; padding: 0.3rem 1rem; }
+    }
+    .luxury-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  background: linear-gradient(135deg, #D4AF37, #F3E5AB, #C5A059);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-family: 'Inter', serif;
+  margin-bottom: 0.5rem;
+}
+
+.luxury-tagline {
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  color: #B8860B;
+  font-weight: 400;
+  text-transform: uppercase;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.loading-dots {
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+  color: #a67c52;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.dot {
+  animation: blink 1.4s infinite;
+  opacity: 0;
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+.dot:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (max-width: 550px) {
+  .luxury-title { font-size: 2.2rem; letter-spacing: 4px; }
+  .luxury-tagline { font-size: 0.65rem; letter-spacing: 2px; white-space: normal; }
+}
+  </style>
+</head>
+<body>
+<div id="welcomeOverlay" class="welcome-overlay">
+  <div class="welcome-content">
+    <i class="fas fa-spray-can-sparkles"></i>
+    <h1 class="luxury-title">Scentoria</h1>
+    <p class="luxury-tagline">Where Luxury Meets Fragrance</p>
+    <div class="loading-dots">
+      <span>Loading essence</span>
+      <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+    </div>
+  </div>
+</div>
+<div id="mainContent" class="main-content">
+  <div class="container">
+    <div class="brand-header" data-aos="fade-up">
+      <h2><i class="fas fa-chalkboard-user"></i> Perfume Empire – Complete Plan</h2>
+      <p>🌸 প্রফেশনাল পার্টনার প্রেজেন্টেশন | Full Flow + Projection + Risk Plan</p>
+    </div>
+
+    <!-- ========= SECTION 1: STARTUP ========= -->
+    <div class="section-divider" data-aos="fade-right">
+      <div class="divider-line"></div>
+      <div class="divider-icon"><i class="fas fa-seedling"></i> STARTUP PHASE</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="plan-grid">
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-chart-line"></i></div><div class="card-title">🧠 1. Market Research <span class="badge-num">বাজার বিশ্লেষণ</span></div><div class="card-content"><p>👉 Facebook/Instagram এ 10–15টি perfume page analyze<br>👉 inspired/attar/decant বেশি sell হয়<br>👉 <span class="highlight">Price: 300–800৳</span><br>👉 Students + young professionals<br>🎯 Goal: ফাস্ট টার্নওভার আইটেম সিলেক্ট</p></div></div>
+
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-palette"></i></div><div class="card-title">🎨 2. Brand Setup</div><div class="card-content"><p>👉 Unique নাম: "Scentoria", "Royal Drop"<br>👉 Canva logo, affordable but premium look<br>🎯 Goal: customer brand মনে রাখবে</p></div></div>
+
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-coins"></i></div><div class="card-title">💰 3. Budget Planning <span class="badge-num">20,000৳</span></div><div class="card-content"><p>13k → perfume oil<br>3k → bottle+packaging<br>2k → Facebook ads<br>2k → delivery+emergency<br>🎯 Smart start</p></div></div>
+
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-flask"></i></div><div class="card-title">🧴 4. Product Selection</div><div class="card-content"><p>👉 5-10 popular fragrances (fresh, sweet, woody)<br>👉 Dior Sauvage, Creed Aventus, Baccarat Rouge type<br>🎯 High demand দিয়ে শুরু</p></div></div>
+
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-truck"></i></div><div class="card-title">🏭 5. Supplier / Wholesale</div><div class="card-content"><p>👉 Islampur, Chawkbazar, New Market Dhaka + online trusted<br>👉 Sample → smell test → bulk<br>⚠️ Quality না বুঝে bulk নয়</p></div></div>
+
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-cube"></i></div><div class="card-title">📦 6. Size & Packaging</div><div class="card-content"><p>👉 5ml / 10ml, glass bottle, branded label, premium look</p></div></div>
+
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-calculator"></i></div><div class="card-title">🧮 7. Cost Calculation</div><div class="card-content"><p>👉 Oil 120 + bottle 30 + label 10 + packaging 20 = <span class="highlight">180৳</span><br>🎯 Exact costing জানা জরুরি</p></div></div>
+
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-tag"></i></div><div class="card-title">💵 8. Price Fixing</div><div class="card-content"><p>👉 Cost 180 → Sell 350-400৳<br>👉 40-60% margin, bundle offer<br>🎯 Profit + competitive থাকা</p></div></div>
+    </div>
+
+    <!-- ========= SECTION 2: OPERATION & MARKETING ========= -->
+    <div class="section-divider" data-aos="fade-right">
+      <div class="divider-line"></div>
+      <div class="divider-icon"><i class="fas fa-chart-simple"></i> OPERATION & MARKETING</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="plan-grid">
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fab fa-facebook"></i></div><div class="card-title">🌐 9. Platform Setup</div><div class="card-content"><p>👉 FB Page, IG, WhatsApp order, logo+cover+product photos</p></div></div>
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-chart-simple"></i></div><div class="card-title">📸 10. Marketing & Content</div><div class="card-content"><p>👉 Daily reels + ads 100-200৳/day, target 18-30 age<br>🎯 Reach + trust build</p></div></div>
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-gift"></i></div><div class="card-title">🎉 11. Launch Offer</div><div class="card-content"><p>👉 First 20 order special discount, combo, free delivery limited time<br>🎯 Fast first sales</p></div></div>
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-clipboard-list"></i></div><div class="card-title">🛒 12. Order Management</div><div class="card-content"><p>👉 Fast reply, confirm call, Google Sheet track</p></div></div>
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-truck-fast"></i></div><div class="card-title">🚚 13. Delivery Process</div><div class="card-content"><p>👉 Pathao/Steadfast, secure packaging, tracking number</p></div></div>
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-headset"></i></div><div class="card-title">🤝 14. Customer Service</div><div class="card-content"><p>👉 Polite, fast reply, problem solve → repeat customer</p></div></div>
+    </div>
+
+    <!-- ========= SECTION 3: GROWTH & PROFIT ========= -->
+    <div class="section-divider" data-aos="fade-right">
+      <div class="divider-line"></div>
+      <div class="divider-icon"><i class="fas fa-chart-line"></i> GROWTH & PROFIT</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="plan-grid">
+      <div class="card profit-box" data-aos="zoom-in"><div class="card-icon"><i class="fas fa-chart-line"></i></div><div class="card-title">💸 Profit Projection <span class="badge-num">EXTREMELY IMPORTANT</span></div><div class="card-content"><p><strong>Investment:</strong> 20,000৳ <br> <strong>Per product cost:</strong> 180৳ <br> <strong>Selling price:</strong> 350৳ <br> <strong>Profit per product:</strong> ~170৳ <br><br> 📊 <span class="highlight">100 product sell = 17,000৳ profit</span><br> 🎯 <strong>Goal:</strong> 1–2 month এ investment recover + pure profit শুরু <br> 👉 Partner কে কনভিন্স করার মূল পয়েন্ট</p></div></div>
+
+      <div class="card risk-box" data-aos="zoom-in"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><div class="card-title">⚠️ Risk & Solution <span class="badge-num">SMART BUSINESS</span></div><div class="card-content"><p>🔴 <strong>Problem:</strong> Product sell না হওয়া <br> ✅ <strong>Solution:</strong> Low stock রাখা + trending item follow <br><br> 🔴 <strong>Problem:</strong> Bad quality <br> ✅ <strong>Solution:</strong> Supplier test (sample before bulk) <br><br> 🔴 <strong>Problem:</strong> Low sales <br> ✅ <strong>Solution:</strong> Ads budget + content increase aggressively <br><br> 🧠 Risk বুঝলে investment confidence বাড়ে</p></div></div>
+
+      <div class="card why-box" data-aos="zoom-in"><div class="card-icon"><i class="fas fa-rocket"></i></div><div class="card-title">🚀 Why This Business Will Work</div><div class="card-content"><p>✔ Low investment business (20k দিয়ে শুরু)<br>✔ High demand product – perfume always needed<br>✔ Online selling → negligible operational cost<br>✔ High profit margin (40–60%)<br>✔ Easy to scale – add more perfumes, ads, reels<br>✔ প্রথম থেকেই পজিটিভ ক্যাশফ্লো সম্ভব</p></div></div>
+    </div>
+
+    <div class="plan-grid">
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-star"></i></div><div class="card-title">⭐ 15. Review Collection</div><div class="card-content"><p>👉 Delivery feedback, screenshot post, video review → trust building</p></div></div>
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-chart-line"></i></div><div class="card-title">🔄 16. Reinvestment Plan</div><div class="card-content"><p>👉 Profit দিয়ে: New perfume, ads increase, better packaging → expand</p></div></div>
+      <div class="card" data-aos="fade-up"><div class="card-icon"><i class="fas fa-globe"></i></div><div class="card-title">🔁 17. Scaling Strategy</div><div class="card-content"><p>👉 Brand identity strong, regular customer base, own signature perfume introduce</p></div></div>
+    </div>
+
+    <!-- CTA SECTION : Partnership Proposal -->
+   <!-- <div class="card cta-box" data-aos="flip-up" style="margin-top: 2rem; background: linear-gradient(135deg, #fff4ec, #fdebd9); border: 2px solid #d9b48b;">
+      <div class="card-icon"><i class="fas fa-handshake"></i></div>
+      <div class="card-title">🤝 Partnership Proposal – Let's Build Together</div>
+      <div class="card-content">
+        <p><strong>💰 Investment:</strong> 20,000৳ (প্রাথমিক মূলধন)<br>
+        <strong>📋 Work تقسیم:</strong> (প্রস্তাব) একজন marketing + content handle করবে,另一位 product sourcing ও delivery manage করবে — অথবা ৫০/৫০ labour ভাগ।<br>
+        <strong>💎 Profit share:</strong> উদাহরণ: <span class="highlight">50% / 50%</span> অথবা আলোচনা সাপেক্ষে।<br>
+        <strong>✅ Why partner with me?</strong> Complete blueprint + execution ready, ঝুঁকি বিশ্লেষণ আছে, এবং স্কেলেবল মডেল।<br><br>
+        📞 <strong>Let’s start together – Contact now to finalize</strong><br>
+        <i class="fas fa-phone-alt"></i> +88018XXXXXXXX  &nbsp;|&nbsp;  <i class="fab fa-whatsapp"></i> WhatsApp Business
+        </p>
+        <div style="margin-top: 0.8rem; text-align: center;">
+          <span style="background: #c17a4b; color: white; padding: 0.5rem 1.5rem; border-radius: 50px; display: inline-block;"><i class="fas fa-calendar-check"></i> Schedule Meeting</span>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="footer-note" data-aos="fade-up">
+      <i class="fas fa-chalkboard-user"></i> <strong>Partner Presentation Ready ✅ | Complete Business Plan</strong><br>
+      Market Research → Profit Projection → Risk Plan → Why it works → Partnership CTA<br>
+      <span style="font-size: 0.8rem;">🌸 Scentoria: আপনার স্বপ্নের পারফিউম ব্র্যান্ড এখনই শুরু করুন।</span>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    const overlay = document.getElementById('welcomeOverlay');
+    const main = document.getElementById('mainContent');
+    setTimeout(() => {
+      overlay.style.opacity = '0';
+      overlay.style.visibility = 'hidden';
+      main.style.opacity = '1';
+      AOS.init({ duration: 700, once: true, offset: 20 });
+    }, 4100);
+  });
+</script>
+</body>
+</html>
